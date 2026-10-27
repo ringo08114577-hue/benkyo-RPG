@@ -11,6 +11,59 @@
 #toast{position:fixed;z-index:30;bottom:88px;left:50%;transform:translateX(-50%);width:min(92vw,560px);pointer-events:none}#toast .notice{box-shadow:0 12px 35px #03091499;margin:0;pointer-events:auto}
 @media(min-width:720px){.main{padding:22px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}.pixelroom{min-height:210px}.pixelroom .castle{font-size:90px}.nav{padding-top:9px}.nav button span{font-size:22px}.resources{margin-top:5px}.topbar{padding:12px 22px}}
 @media(max-width:420px){.main{padding:10px}.grid{gap:7px}.card{padding:10px}.grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}.question{font-size:17px}.brand{font-size:15px}.pill{font-size:11px}.nav button{font-size:10px}.nav button span{font-size:18px}.formgrid{grid-template-columns:1fr}.formgrid .full{grid-column:auto}}
+
+/* Classic command-menu battle UI */
+.dq-battle{background:#111c31;border:3px solid #8196b7;border-radius:7px;padding:10px;box-shadow:0 0 0 3px #263a58,inset 0 0 0 2px #35496a;font-family:"Courier New",monospace;color:#f5f7ff}
+.dq-battle-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:2px 3px 10px;font-size:13px;font-weight:900;letter-spacing:.4px}
+.dq-battle-heading .dq-location{color:#c4d8fa}
+.dq-turn-badge{background:#293d5e;border:2px solid #91a8d0;padding:4px 8px;white-space:nowrap}
+.dq-arena{position:relative;isolation:isolate;overflow:hidden;min-height:205px;border:3px solid #8196b7;background:linear-gradient(#243f64 0%,#3b5f83 58%,#415e48 58%,#253f35 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:17px 10px 13px;text-align:center;box-shadow:inset 0 0 0 3px #162742}
+.dq-arena:before{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:24%;height:8px;background:repeating-linear-gradient(90deg,#66845b 0 22px,#506f4d 22px 44px)}
+.dq-arena:after{content:"";position:absolute;z-index:-1;inset:0;opacity:.36;background-image:radial-gradient(#cce4ff 1px,transparent 1.5px);background-size:29px 23px}
+.dq-enemy-figure{font-family:system-ui,sans-serif;font-size:64px;line-height:1.1;filter:drop-shadow(4px 5px 0 #152139);animation:dqFloat 2.8s ease-in-out infinite}
+.dq-enemy-name{margin-top:5px;font-weight:900;font-size:16px;text-shadow:2px 2px #17223b}
+.dq-enemy-meta{font-family:system-ui,sans-serif;font-size:11px;color:#e3edff;text-shadow:1px 1px #17223b}
+.dq-enemy-hp{width:min(260px,82%);margin-top:7px;text-align:left;font-family:system-ui,sans-serif;font-size:10px;color:#fff}
+.dq-enemy-hp .statline{height:7px;border-color:#cad7e9}
+.dq-enemy-hp .statline span{background:linear-gradient(90deg,#fc7878,#ffd175)}
+.dq-message{margin-top:10px;background:#07101f;border:3px solid #8095b7;box-shadow:inset 0 0 0 2px #1d2e49;padding:11px 12px;min-height:66px;line-height:1.7;font-size:13px}
+.dq-message-label{color:#9fc8ff;font-size:10px;font-weight:900;letter-spacing:1px;margin-bottom:2px}
+.dq-message .dq-progress{color:#a8f0c9;font-size:11px;margin-top:4px}
+.dq-section-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:14px 2px 7px;font-weight:900;font-size:13px}
+.dq-section-title small{font-size:10px;color:#b2c3dc;font-weight:500}
+.dq-party-grid{display:grid;grid-template-columns:1fr;gap:8px}
+.dq-member{border:2px solid #5d7498;background:linear-gradient(120deg,#243651,#15243c);padding:9px;min-width:0}
+.dq-member.planned{border-color:#e8c36c;box-shadow:inset 0 0 0 1px #e8c36c55}
+.dq-member.fallen{opacity:.58;border-color:#794d5b}
+.dq-member-top{display:flex;align-items:center;gap:9px}
+.dq-hero-icon{width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;background:#0d192d;border:2px solid #647d9e;font-family:system-ui,sans-serif;font-size:29px;box-shadow:inset 0 0 0 2px #263b58}
+.dq-member-ident{min-width:0;flex:1}
+.dq-member-name{font-size:14px;font-weight:900}
+.dq-lv{float:right;color:#b8cbe4;font-size:10px}
+.dq-vitals{display:flex;gap:9px;font-size:11px;color:#e6f0ff;margin-top:3px;flex-wrap:wrap}
+.dq-vitals .hp{color:#ffb4b4}.dq-vitals .mp{color:#a8d5ff}
+.dq-meter{display:grid;grid-template-columns:23px 1fr;align-items:center;gap:5px;margin-top:5px;font-size:10px}
+.dq-meter .statline{height:6px}
+.dq-meter .hpbar span{background:linear-gradient(90deg,#e45d68,#ffa86a)}
+.dq-meter .mpbar span{background:linear-gradient(90deg,#4d9df2,#9eafff)}
+.dq-member-command{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:9px;font-size:11px;color:#b9c9e1}
+.dq-command-status{color:#ffdf85;font-weight:900}
+.dq-commands{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-top:7px}
+.dq-command-btn{padding:9px 4px;border:2px solid #758bab;background:#263b5a;color:#fff;font-family:"Courier New",monospace;font-weight:900;font-size:12px;box-shadow:0 2px #080e1a;white-space:normal}
+.dq-command-btn.selected{background:#7d622b;color:#fff5d2;border-color:#ffe18e;box-shadow:inset 0 0 0 1px #463519}
+.dq-command-btn:disabled{opacity:.35}
+.dq-turn-panel{margin-top:10px;background:#1a2a44;border:2px solid #788eaf;padding:10px}
+.dq-turn-panel .actions{margin-top:8px}
+.dq-turn-start{background:#765b28!important;border:2px solid #ffdf8c!important;color:#fff4cf!important;font-family:"Courier New",monospace;font-weight:900;min-height:44px}
+.dq-reset{font-family:"Courier New",monospace;font-weight:900}
+.dq-log{margin-top:10px;background:#070e1a;border:2px solid #536a8e;padding:8px 10px;max-height:150px;overflow:auto;font-size:11px;line-height:1.55}
+.dq-log-title{color:#9fc8ff;font-weight:900;margin-bottom:4px}
+.dq-log p{margin:3px 0}
+.dq-result{margin-top:10px;border:2px solid #9aafcf;background:#1c2d49;padding:12px}
+.dq-result h3{margin:0 0 4px;font-size:17px}
+@keyframes dqFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media(min-width:720px){.dq-battle{padding:15px}.dq-arena{min-height:265px}.dq-enemy-figure{font-size:84px}.dq-party-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.dq-member{padding:10px}.dq-member-top{align-items:flex-start}.dq-hero-icon{width:40px;height:40px;flex-basis:40px;font-size:25px}.dq-member-name{font-size:13px}.dq-lv{float:none;display:block;margin-top:2px}.dq-vitals{gap:7px}.dq-commands{grid-template-columns:1fr}.dq-command-btn{padding:8px;font-size:12px}.dq-member-command{display:block}.dq-command-status{display:block;margin-top:3px}.dq-message{font-size:14px;padding:13px 15px}}
+
 </style>
 </head>
 <body>
@@ -147,7 +200,39 @@ function enemyWeakness(e){return {火:'水',水:'木',木:'火',雷:'木',光:'�
 function speedRun(dungeonId,stageIndex){if(data.speedTickets<1){notify('高速周回チケットがないよ。',true);return;}if(!data.cleared[dungeonId+'_'+stageIndex])return;data.speedTickets--;const rewards=grantDungeonRewards(dungeonId,stageIndex,false);save();render();notify('高速周回報酬：'+rewards.join('、'));}
 function premiumRun(dungeonId,stageIndex){if(data.premiumSpeedTickets<1){notify('高速周回＋チケットがないよ。',true);return;}if(!data.cleared[dungeonId+'_'+stageIndex])return;data.premiumSpeedTickets--;const rewards=grantDungeonRewards(dungeonId,stageIndex,false);if(Math.random()<.25){data.gearTickets++;rewards.push('装備ガチャ券');}save();render();notify('高速周回＋報酬：'+rewards.join('、'));}
 function grantDungeonRewards(dungeonId,stageIndex,first){const d=DUNGEONS.find(x=>x.id===dungeonId),s=d.stages[stageIndex],rewards=[];const coins=15+s[1]*5;data.coins+=coins;data.materials+=2+Math.floor(s[1]/4);rewards.push('コイン+'+coins,'素材+'+(2+Math.floor(s[1]/4)));if(Math.random()<.18){data.rareMaterials++;rewards.push('レア素材');}if(Math.random()<.12){data.gearTickets++;rewards.push('装備ガチャ券');}if(Math.random()<.1){data.speedTickets=Math.min(100,data.speedTickets+1);rewards.push('高速周回券');}if(first){data.gearTickets+=stageIndex===3?2:1;rewards.push('初回：装備ガチャ券+'+(stageIndex===3?2:1));}return rewards;}
-function renderBattle(){if(!battle)return renderDungeon();const b=battle,e=b.enemy,party=getParty();b.playerHp??=Object.fromEntries(party.map(c=>[c.uid,mainStats(c).hp]));b.plannedActions??={};const alive=party.filter(c=>(b.playerHp[c.uid]??mainStats(c).hp)>0);const chosen=alive.filter(c=>b.plannedActions[c.uid]).length;const labels={attack:'通常攻撃',skill:'属性スキル',defend:'防御'};return `<h1 class="screen-title">⚔️ 戦闘中</h1><p class="subtitle">${esc(DUNGEONS.find(d=>d.id===b.dungeonId)?.name||'ダンジョン')} · ターン ${b.turn}</p><section class="card"><div class="enemyrow ${e.hp<=0?'dead':''}"><div class="row between"><div><div class="emoji">${e.emoji}</div><h4>${esc(e.name)} <span class="tag">Lv.${e.level}</span></h4><div class="tiny muted">${e.element}属性 · 弱点：${enemyWeakness(e.element)}</div></div><div style="min-width:42%;text-align:right"><b>${Math.max(0,e.hp)} / ${e.maxHp} HP</b><div class="statline hpbar"><span style="width:${Math.max(0,e.hp/e.maxHp*100)}%"></span></div></div></div></div><div class="notice">${b.result?'戦闘終了':`行動選択：${chosen}/${alive.length}人。全員の行動を決めてから、まとめてターンを実行するよ。`}</div>${party.map(c=>{const s=mainStats(c),hp=Math.max(0,b.playerHp[c.uid]??s.hp),mp=b.playerMp[c.uid]??s.mp,move=b.plannedActions[c.uid];return `<div class="allyrow ${hp<=0?'dead':''}"><div class="row"><div class="avatar">${c.emoji}</div><div class="grow"><h4>${esc(c.name)} Lv.${c.level} ${hp<=0?'<span class="tag">戦闘不能</span>':''}</h4><div class="tiny muted">${c.element} · HP ${hp}/${s.hp} · MP ${mp}/${s.mp}</div><div class="statline hpbar"><span style="width:${Math.max(0,hp/s.hp*100)}%"></span></div></div></div>${!b.result&&hp>0?`<div class="tiny ${move?'greentext':'muted'}" style="margin-top:8px">${move?'✅ 選択中：'+labels[move]:'まだ行動を選んでいません'}</div><div class="actions"><button class="smallbtn ${move==='attack'?'gold':''}" data-action="planBattle" data-id="${c.uid}" data-move="attack">⚔ 通常攻撃</button><button class="smallbtn ${move==='skill'?'gold':''}" data-action="planBattle" data-id="${c.uid}" data-move="skill" ${mp<5?'disabled':''}>✨ 属性スキル（MP 5）</button><button class="smallbtn ${move==='defend'?'gold':''}" data-action="planBattle" data-id="${c.uid}" data-move="defend">🛡 防御</button></div>`:''}</div>`}).join('')}${!b.result?`<section class="card" style="margin-top:10px"><h3>今回の作戦</h3><div class="tiny muted">${alive.map(c=>`${esc(c.name)}：${b.plannedActions[c.uid]?labels[b.plannedActions[c.uid]]:'未選択'}`).join('　/　')}</div><div class="actions"><button class="primary" data-action="resolveBattleTurn" ${chosen<alive.length?'disabled':''}>▶ 全員の行動を実行</button><button data-action="resetBattlePlan" ${chosen===0?'disabled':''}>選択をリセット</button></div></section>`:''}<div class="log"><b>戦闘ログ</b>${b.logs.slice(-12).map(t=>`<p>${esc(t)}</p>`).join('')}</div>${b.result?`<section class="card" style="margin-top:10px"><h3>${b.result==='win'?'🎉 勝利！':'💫 敗北…'}</h3><p class="tiny muted">${b.result==='win'?'報酬を獲得したよ。':'チケットは戻り、アイテムも失わない。編成や装備を変えて再挑戦しよう。'}</p>${(b.rewards||[]).map(x=>`<span class="loot">${esc(x)}</span>`).join('')}<div class="actions"><button class="primary" data-action="battleExit">ダンジョンに戻る</button><button data-action="battleAgain">再挑戦</button></div></section>`:''}</section>`;}
+function renderBattle(){
+if(!battle)return renderDungeon();
+const b=battle,e=b.enemy,party=getParty(),d=DUNGEONS.find(x=>x.id===b.dungeonId);
+b.playerHp??=Object.fromEntries(party.map(c=>[c.uid,mainStats(c).hp]));
+b.plannedActions??={};
+const alive=party.filter(c=>(b.playerHp[c.uid]??mainStats(c).hp)>0);
+const chosen=alive.filter(c=>b.plannedActions[c.uid]).length;
+const labels={attack:'たたかう',skill:'とくぎ',defend:'ぼうぎょ'};
+const enemyPercent=Math.max(0,Math.min(100,e.hp/e.maxHp*100));
+return `<h1 class="screen-title">⚔️ 戦闘</h1>
+<div class="dq-battle">
+  <div class="dq-battle-heading"><span class="dq-location">${esc(d?.name||'ダンジョン')}</span><span class="dq-turn-badge">ターン ${b.turn}</span></div>
+  <div class="dq-arena">
+    <div class="dq-enemy-figure">${e.emoji}</div>
+    <div class="dq-enemy-name">${esc(e.name)}</div>
+    <div class="dq-enemy-meta">Lv.${e.level} · ${e.element}属性 · 弱点：${enemyWeakness(e.element)}</div>
+    <div class="dq-enemy-hp"><div class="row between"><span>敵のHP</span><span>${Math.max(0,e.hp)} / ${e.maxHp}</span></div><div class="statline"><span style="width:${enemyPercent}%"></span></div></div>
+  </div>
+  <div class="dq-message"><div class="dq-message-label">メッセージ</div>${b.result?(b.result==='win'?`${esc(e.name)}を たおした！`:'パーティーは ぜんめつした……'):`どうする？ 仲間全員のコマンドを決めよう！<div class="dq-progress">コマンド決定：${chosen} / ${alive.length}人</div>`}</div>
+  <div class="dq-section-title"><span>👥 パーティー</span><small>全員の行動を決めてからターン開始</small></div>
+  <div class="dq-party-grid">${party.map(c=>{const s=mainStats(c),hp=Math.max(0,b.playerHp[c.uid]??s.hp),mp=b.playerMp[c.uid]??s.mp,move=b.plannedActions[c.uid];return `<section class="dq-member ${move?'planned':''} ${hp<=0?'fallen':''}">
+    <div class="dq-member-top"><div class="dq-hero-icon">${c.emoji}</div><div class="dq-member-ident"><div><span class="dq-member-name">${esc(c.name)}</span><span class="dq-lv">Lv.${c.level}</span></div><div class="dq-vitals"><span class="hp">HP ${hp}/${s.hp}</span><span class="mp">MP ${mp}/${s.mp}</span></div><div class="dq-meter"><span>HP</span><div class="statline hpbar"><span style="width:${Math.max(0,hp/s.hp*100)}%"></span></div></div><div class="dq-meter"><span>MP</span><div class="statline mpbar"><span style="width:${Math.max(0,mp/s.mp*100)}%"></span></div></div></div></div>
+    ${!b.result&&hp>0?`<div class="dq-member-command"><span>コマンド</span><span class="dq-command-status">${move?'▶ '+labels[move]:'未決定'}</span></div><div class="dq-commands">
+      <button class="dq-command-btn ${move==='attack'?'selected':''}" data-action="planBattle" data-id="${c.uid}" data-move="attack">⚔ たたかう</button>
+      <button class="dq-command-btn ${move==='skill'?'selected':''}" data-action="planBattle" data-id="${c.uid}" data-move="skill" ${mp<5?'disabled':''}>✨ とくぎ</button>
+      <button class="dq-command-btn ${move==='defend'?'selected':''}" data-action="planBattle" data-id="${c.uid}" data-move="defend">🛡 ぼうぎょ</button>
+    </div>`:`<div class="dq-member-command"><span>${hp<=0?'戦闘不能':'行動終了'}</span></div>`}
+  </section>`}).join('')}</div>
+  ${!b.result?`<div class="dq-turn-panel"><div class="row between wrap"><b>ターン開始の確認</b><span class="tiny muted">${chosen===alive.length?'全員決定！':`あと ${alive.length-chosen}人`}</span></div><div class="actions"><button class="dq-turn-start" data-action="resolveBattleTurn" ${chosen<alive.length?'disabled':''}>▶ ターン開始</button><button class="dq-reset" data-action="resetBattlePlan" ${chosen===0?'disabled':''}>コマンドを選び直す</button></div></div>`:''}
+  <div class="dq-log"><div class="dq-log-title">戦闘の記録</div>${b.logs.slice(-12).map(t=>`<p>› ${esc(t)}</p>`).join('')}</div>
+  ${b.result?`<div class="dq-result"><h3>${b.result==='win'?'🎉 しょうり！':'💫 まけてしまった……'}</h3><p class="tiny muted">${b.result==='win'?'勝利報酬を手に入れた。':'ダンジョンチケットは返却され、所持品は失わない。'}</p>${(b.rewards||[]).map(x=>`<span class="loot">${esc(x)}</span>`).join('')}<div class="actions"><button class="primary" data-action="battleExit">ダンジョンへ戻る</button><button data-action="battleAgain">もう一度挑戦</button></div></div>`:''}
+</div>`;
+}
 function planBattleAction(charUid,move){const b=battle;if(!b||b.result||b.phase!=='planning')return;const c=getParty().find(x=>x.uid===charUid);if(!c)return;const hp=(b.playerHp||{})[charUid]??mainStats(c).hp;if(hp<=0){notify('戦闘不能のキャラは行動できないよ。',true);return;}if(!['attack','skill','defend'].includes(move))return;if(move==='skill'&&(b.playerMp[charUid]||0)<5){notify('MPが足りないよ。',true);return;}b.plannedActions??={};b.plannedActions[charUid]=move;render();}
 function battleSpeed(c){return 10+(c.level||1)*.5+(c.role==='速度'?12:c.role==='魔法'?4:c.role==='支援'?3:0)+Math.random()*8;}
 function resolveBattleTurn(){const b=battle;if(!b||b.result||b.phase!=='planning')return;b.playerHp??=Object.fromEntries(getParty().map(c=>[c.uid,mainStats(c).hp]));b.plannedActions??={};const party=getParty(),alive=party.filter(c=>(b.playerHp[c.uid]??mainStats(c).hp)>0);if(alive.some(c=>!b.plannedActions[c.uid])){notify('生きている仲間全員の行動を選んでね。',true);return;}for(const c of alive){if(b.plannedActions[c.uid]==='skill'&&(b.playerMp[c.uid]||0)<5){notify(`${c.name}のMPが足りないので、行動を選び直してね。`,true);return;}}b.phase='resolving';const order=alive.map(c=>({type:'ally',c,move:b.plannedActions[c.uid],speed:battleSpeed(c)}));order.push({type:'enemy',speed:11+b.enemy.level*.55+Math.random()*8});order.sort((a,b)=>b.speed-a.speed);const defending=new Set(alive.filter(c=>b.plannedActions[c.uid]==='defend').map(c=>c.uid));b.logs.push(`── ターン ${b.turn}：行動開始 ──`);for(const act of order){if(b.enemy.hp<=0)break;if(act.type==='ally'){const c=act.c,s=mainStats(c);if((b.playerHp[c.uid]||0)<=0){b.logs.push(`${c.name}は戦闘不能で行動できない。`);continue;}if(act.move==='defend'){b.logs.push(`${c.name}は防御態勢をとった。`);continue;}let damage;if(act.move==='skill'){b.playerMp[c.uid]-=5;damage=Math.max(2,Math.floor(s.atk*1.6)-b.enemy.def+Math.floor(Math.random()*9));if(c.element===enemyWeakness(b.enemy.element))damage=Math.floor(damage*1.1);b.logs.push(`${c.name}の${c.element}属性スキル！`);}else{damage=Math.max(1,s.atk-b.enemy.def+Math.floor(Math.random()*5));b.logs.push(`${c.name}の通常攻撃！`);}b.enemy.hp=Math.max(0,b.enemy.hp-damage);b.logs.push(`→ ${damage}ダメージ（敵HP ${b.enemy.hp}/${b.enemy.maxHp}）`);if(b.enemy.hp<=0){b.logs.push(`${b.enemy.name}を撃破！`);finishBattle(true);return;}}else{const targets=party.filter(c=>(b.playerHp[c.uid]||0)>0);if(!targets.length){finishBattle(false);return;}const target=targets[Math.floor(Math.random()*targets.length)],ts=mainStats(target),roll=Math.random();let moveName='通常攻撃',mult=1;if(roll>=.95){moveName='必殺攻撃';mult=1.8;}else if(roll>=.78){moveName='強攻撃';mult=1.4;}else if(roll>=.58){moveName='属性攻撃';mult=1.2;}let incoming=Math.max(1,Math.floor(b.enemy.atk*mult)-ts.def+Math.floor(Math.random()*5));if(defending.has(target.uid))incoming=Math.max(1,Math.floor(incoming*.45));b.playerHp[target.uid]=Math.max(0,(b.playerHp[target.uid]||0)-incoming);b.logs.push(`${b.enemy.name}の${moveName}！${defending.has(target.uid)?'（防御で軽減）':''}`);b.logs.push(`→ ${target.name}に${incoming}ダメージ（HP ${b.playerHp[target.uid]}/${ts.hp}）`);if(party.every(c=>(b.playerHp[c.uid]||0)<=0)){b.logs.push('パーティーは全員倒れてしまった……');finishBattle(false);return;}}}if(b.enemy.hp<=0){finishBattle(true);return;}b.turn++;b.phase='planning';b.plannedActions={};b.logs.push(`── ターン ${b.turn}：次の行動を選択 ──`);save();render();}function finishBattle(win){const b=battle;if(!b)return;const d=DUNGEONS.find(x=>x.id===b.dungeonId);if(win){const first=!data.cleared[b.dungeonId+'_'+b.stageIndex];data.cleared[b.dungeonId+'_'+b.stageIndex]=true;data.stats.wins++;data.stats.clears++;data.stats.kills++;getParty().forEach(c=>{c.totalWins++;});const rewards=grantDungeonRewards(b.dungeonId,b.stageIndex,first);const exp=addExp(4+b.enemy.level);if(Math.random()<.04){data.premiumSpeedTickets=Math.min(30,data.premiumSpeedTickets+1);rewards.push('高速周回＋券');}b.rewards=rewards.concat('戦闘EXP+'+exp);b.result='win';}else{data.dungeonTickets++;b.result='lose';b.rewards=['敗北：チケット返却','所持品の損失なし'];}checkAchievements(false);save();render();}
